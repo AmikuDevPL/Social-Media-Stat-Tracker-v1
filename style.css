@@ -81,7 +81,9 @@ nav {
 .accounts {
    color: var(--light-font);
    font-size: 15px;
-   display: none;
+   overflow: hidden;
+   height: 0;
+   transition: all 0.5s ease;
 }
 
 .menu > button,
