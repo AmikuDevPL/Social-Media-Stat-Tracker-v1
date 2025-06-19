@@ -25,22 +25,22 @@ body {
 
 .container {
    position: absolute;
+   display: flex;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
-   width: 95vw;
-   height: 90vh;
-   background-color: var(--scnd-background-color);
-   border-radius: 10px 0 0 10px;
+   width: 97vw;
+   height: 96vh;
+   background-color: var(--background-color);
+   border-radius: 15px;
 }
 
 nav {
    position: relative;
-   width: 300px;
+   width: 20%;
    height: 90vh;
-   background-color: var(--background-color);
    padding: 10px 30px;
-   border-radius: 10px 0 0 10px;
+   border-radius: 15px 0 0 15px;
 }
 
 .logo {
@@ -48,7 +48,7 @@ nav {
    height: 70px;
    display: grid;
    place-items: center;
-   font-size: 30px;
+   font-size: 20px;
    font-weight: 600;
    font-family: "Segoe UI", sans-serif;
    color: var(--dark-font);
@@ -57,7 +57,7 @@ nav {
 .toggle-menu,
 .toggle-accounts {
    color: var(--dark-font);
-   font-size: 18px;
+   font-size: 14px;
    margin: 10px 0;
    display: flex;
    position: relative;
@@ -66,7 +66,7 @@ nav {
 
 .toggle-menu img,
 .toggle-accounts img {
-   width: 20px;
+   width: 14px;
 }
 
 .opened-menu,
@@ -85,7 +85,7 @@ nav {
 .menu,
 .accounts {
    color: var(--light-font);
-   font-size: 15px;
+   font-size: 11px;
    overflow: hidden;
    height: 0;
    transition: all 0.5s ease;
@@ -93,7 +93,7 @@ nav {
 
 .menu img,
 .accounts img {
-   width: 20px;
+   width: 18px;
 }
 
 .menu > button,
@@ -154,6 +154,7 @@ nav {
    padding-left: 10px;
    height: 40px;
    border-radius: 10px;
+   font-size: 14px;
 }
 
 .bottom-nav-icon {
@@ -179,6 +180,7 @@ nav {
    border-radius: 15px;
    align-items: center;
    position: relative;
+   font-size: 14px;
 }
 
 .actual {
@@ -209,7 +211,6 @@ nav {
 
 .light-theme-button:hover,
 .dark-theme-button:hover {
-   /* background-color: var(--scnd-background-color); */
    box-shadow: 0 0 10px -3px var(--box-shadow-color);
 }
 
@@ -219,6 +220,14 @@ nav {
 
 .dark-theme-button {
    left: 50%;
+}
+
+main {
+   width: 60%;
+}
+
+aside {
+   width: 20%;
 }
 
 /*Dark Theme*/
