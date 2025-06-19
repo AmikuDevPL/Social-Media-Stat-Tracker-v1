@@ -1,5 +1,6 @@
 :root {
-   --main-background-color: #bbbebd;
+   --main-background-color: #dedede;
+   --scnd-background-color: #bbbebd;
    --background-color: #d3d3d3;
    --light-font: gray;
    --dark-font: black;
@@ -29,6 +30,8 @@ body {
    transform: translate(-50%, -50%);
    width: 95vw;
    height: 90vh;
+   background-color: var(--scnd-background-color);
+   border-radius: 10px 0 0 10px;
 }
 
 nav {
@@ -36,8 +39,8 @@ nav {
    width: 300px;
    height: 90vh;
    background-color: var(--background-color);
-   border-radius: 10px 0 0 10px;
    padding: 10px 30px;
+   border-radius: 10px 0 0 10px;
 }
 
 .logo {
@@ -48,34 +51,58 @@ nav {
    font-size: 30px;
    font-weight: 600;
    font-family: "Segoe UI", sans-serif;
+   color: var(--dark-font);
 }
 
 .toggle-menu,
 .toggle-accounts {
    color: var(--dark-font);
    font-size: 18px;
-   margin-bottom: 10px;
+   margin: 10px 0;
+   display: flex;
+   position: relative;
+   width: 80%;
+}
+
+.opened-menu,
+.closed-menu,
+.opened-accounts,
+.closed-accounts {
+   position: absolute;
+   right: 0;
+}
+
+.opened-menu,
+.opened-accounts {
+   display: none;
 }
 
 .menu,
 .accounts {
    color: var(--light-font);
    font-size: 15px;
+   display: none;
 }
 
-.menu div,
-.accounts div {
+.menu > button,
+.accounts > button:nth-child(1),
+.accounts > button:nth-child(2),
+.accounts > button:nth-child(3) {
+   width: 80%;
    margin: 5px auto;
    padding: 10px;
    display: flex;
    gap: 20px;
-   height: 30px;
+   height: 15px;
    align-items: center;
    border-radius: 10px;
+   transition: all 0.1s ease;
 }
 
-.menu div:hover,
-.accounts div:hover {
+.menu button:hover,
+.accounts button:hover,
+.support button:hover,
+.settings button:hover {
    box-shadow: 0 0 10px 0px var(--box-shadow-color);
 }
 
@@ -86,8 +113,13 @@ nav {
    place-items: center;
    border-radius: 10px;
    margin: 10px auto;
-   width: 90%;
-   height: 35px;
+   width: 70%;
+   height: 30px;
+   transition: all 0.2s ease;
+}
+
+.add-more-accounts:hover {
+   background-color: rgb(0, 81, 202);
 }
 
 .bottom-nav {
@@ -101,9 +133,20 @@ nav {
    margin-bottom: 10px;
 }
 
-.support,
-.settings {
+.support button,
+.settings button {
    color: var(--light-font);
+   display: flex;
+   align-items: center;
+   width: 60%;
+   padding-left: 10px;
+   height: 40px;
+   border-radius: 10px;
+}
+
+.bottom-nav-icon {
+   margin-left: 5px;
+   margin-right: 20px;
 }
 
 .bottom-nav-hr {
@@ -114,22 +157,59 @@ nav {
 
 .theme {
    width: 70%;
-   margin-left: 15px;
    height: 35px;
+   color: var(--dark-font);
    background-color: var(--main-background-color);
    border-radius: 15px;
-   display: flex;
-   justify-content: space-around;
    align-items: center;
-   cursor: pointer;
+   position: relative;
 }
 
 .actual {
    position: absolute;
    width: 50%;
-   height: 30px;
+   height: 100%;
+   left: 50%;
+   box-shadow: 0 0 10px -5px var(--box-shadow-color);
+   border-radius: 15px;
+   background-color: var(--scnd-background-color);
 }
 
 .bottom-nav-button {
    margin-left: 20px;
+}
+
+.light-theme-button,
+.dark-theme-button {
+   position: absolute;
+   z-index: 10;
+   width: 50%;
+   height: 100%;
+   display: grid;
+   place-items: center;
+   border-radius: 15px;
+}
+
+.light-theme-button:hover,
+.dark-theme-button:hover {
+   background-color: var(--scnd-background-color);
+}
+
+.light-theme-button {
+   left: 0;
+}
+
+.dark-theme-button {
+   left: 50%;
+}
+
+/*Dark Theme*/
+
+body.dark {
+   --main-background-color: #202020;
+   --scnd-background-color: #303030;
+   --background-color: #404040;
+   --light-font: rgb(201, 201, 201);
+   --dark-font: rgb(255, 255, 255);
+   --box-shadow-color: rgba(128, 128, 128, 0.534);
 }
