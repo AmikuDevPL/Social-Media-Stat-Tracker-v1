@@ -64,6 +64,11 @@ nav {
    width: 80%;
 }
 
+.toggle-menu img,
+.toggle-accounts img {
+   width: 20px;
+}
+
 .opened-menu,
 .closed-menu,
 .opened-accounts,
@@ -84,6 +89,11 @@ nav {
    overflow: hidden;
    height: 0;
    transition: all 0.5s ease;
+}
+
+.menu img,
+.accounts img {
+   width: 20px;
 }
 
 .menu > button,
@@ -149,6 +159,10 @@ nav {
 .bottom-nav-icon {
    margin-left: 5px;
    margin-right: 20px;
+}
+
+.bottom-nav-icon img {
+   width: 20px;
 }
 
 .bottom-nav-hr {
